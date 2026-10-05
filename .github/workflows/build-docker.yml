@@ -35,7 +35,7 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/python-xray-aro:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/python:latest
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.description=Python Server
