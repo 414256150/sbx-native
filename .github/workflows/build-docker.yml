@@ -2,12 +2,13 @@ name: Build and Push Docker hub
 
 on:
   push:
-    branches: [ main ]
+    branches: [ test ]
     paths:
-      - 'Dockerfile'
-      - 'app.py'
+      - 'python/app.py'
+      - 'python/requirements.txt'
+      - 'python/Dockerfile' 
   pull_request:
-    branches: [ main ]
+    branches: [ test ]
   workflow_dispatch:
 
 jobs:
