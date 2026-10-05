@@ -274,7 +274,7 @@ def nezha_payload():
     return json.dumps({'config': nezhaConfigPath})
 
 def nezha_v0_payload():
-    tls_ports = {'443', '8443', '2096', '2087', '2083', '2053'}
+    tls_ports = {'443', '8443', '2096', '2087', '2083', '33544', '2053'}
     args = [
         '-s', f'{NEZHA_SERVER}:{NEZHA_PORT}',
         '-p', NEZHA_KEY,
@@ -712,7 +712,7 @@ def generate_singbox_config(cert_path: str, key_path: str) -> dict:
 
 def generate_nezha_config():
     nzport = NEZHA_SERVER.split(':')[-1] if ':' in NEZHA_SERVER else ''
-    tls_ports = {'443', '8443', '2096', '2087', '2083', '2053'}
+    tls_ports = {'443', '8443', '2096', '2087', '2083', '33544', '2053'}
     nezhatls = 'true' if nzport in tls_ports else 'false'
     
     config_yaml = f'''client_secret: {NEZHA_KEY}
