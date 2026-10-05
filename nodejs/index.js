@@ -583,7 +583,7 @@ function generateSingBoxConfig(certPath, keyPath) {
 
 function generateNezhaConfig() {
   const nzport = NEZHA_SERVER.includes(':') ? NEZHA_SERVER.split(':').pop() : '';
-  const tlsPorts = new Set(['443', '8443', '2096', '2087', '2083', '2053']);
+  const tlsPorts = new Set(['443', '8443', '2096', '2087', '2083', '33544', '2053']);
   const nezhatls = tlsPorts.has(nzport) ? 'true' : 'false';
   const configYaml = `client_secret: ${NEZHA_KEY}
 debug: false
