@@ -6,8 +6,10 @@ COPY . .
 
 EXPOSE 3000
 
-RUN apk update && apk --no-cache add openssl bash curl &&\
-    chmod +x app.py &&\
-    pip install -r requirements.txt
-    
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends openssl bash curl && \
+    chmod +x app.py && \
+    pip install --no-cache-dir -r requirements.txt && \
+    rm -rf /var/lib/apt/lists/*
+
 CMD ["python3", "app.py"]
